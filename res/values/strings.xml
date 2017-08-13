@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Notey</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_page">Notey</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_text_note">Text Note...</string>
+    <string name="title_activity_drawing_note">Drawing Note...</string>
+    <string name="title_activity_todo_list">To Do List</string>
+
+</resources>
