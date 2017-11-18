@@ -51,7 +51,6 @@
         android:layout_below="@+id/editTitleText1"
         android:ems="10"
         android:gravity="left|top"
-        android:textCursorDrawable="@null"
         android:background="#FAF2AD"
         android:textColor="#000000"
         android:inputType="textMultiLine"

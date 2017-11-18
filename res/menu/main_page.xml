@@ -33,4 +33,9 @@
         android:icon="@drawable/settings"
         android:showAsAction="ifRoom|withText"/>
 
+    <item 
+        android:id="@+id/about_help" 
+        android:title="About/Help"
+        android:icon="@drawable/info_icon"
+        android:showAsAction="ifRoom|withText"/>
 </menu>
