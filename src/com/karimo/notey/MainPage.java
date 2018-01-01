@@ -5,7 +5,6 @@ package com.karimo.notey;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -31,9 +30,9 @@ public class MainPage extends Activity implements OnItemClickListener
 	private ArrayList<File> notesList;
 	private Builder aboutWindow;
 	//listview adapter
-	@SuppressWarnings("unused")
-	private ArrayAdapter<File> adapter;
+	private ArrayAdapter<String> adapter;
 	private ListView listView;
+	static final int NEW_BLANK_NOTE_REQUEST = 1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -43,10 +42,10 @@ public class MainPage extends Activity implements OnItemClickListener
 		getOverflowMenu();
 		
 		listView = (ListView) findViewById(R.id.notesListView);
-		loadListView();
-		
 		listView.setOnItemClickListener(this);
 		
+		loadListView();
+		listView.setAdapter(adapter);
 	}
 
 	@Override
@@ -71,10 +70,8 @@ public class MainPage extends Activity implements OnItemClickListener
 		switch(item.getItemId())
 		{
 		case R.id.action_newTextNote:
-			//here, the intent is a new note, make it known to TextNoteActivity class
-			//intent.putExtra
 			Intent i = new Intent(this, TextNoteActivity.class);
-			startActivity(i);
+			startActivityForResult(i,NEW_BLANK_NOTE_REQUEST);
 			return true;
 		case R.id.action_newDrawNote:
 			Intent j = new Intent(this, DrawingNoteActivity.class);
@@ -97,6 +94,24 @@ public class MainPage extends Activity implements OnItemClickListener
 			return super.onOptionsItemSelected(item);
 		}
 	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) 
+	{
+		super.onActivityResult(requestCode, resultCode, data);
+	    if (requestCode == NEW_BLANK_NOTE_REQUEST) 
+	    {
+	        // Make sure the request was successful
+	        if (resultCode == RESULT_OK) 
+	        {
+	            //we've saved a note
+	        	//update the listview
+	        	loadListView();
+	        	listView.setAdapter(adapter);
+	        }
+	    }
+	}
+	
 	private void searchNotes()
 	{
 		// TODO Auto-generated method stub
@@ -152,28 +167,33 @@ public class MainPage extends Activity implements OnItemClickListener
 	private void loadListView()
 	{
 		//populate the list view
-		File file = new File(Environment.getExternalStorageDirectory(),
+		File file = new File(Environment.getExternalStorageDirectory() + File.separator +
 			    "Notey");
 		notesList = getListFiles(file);
-		adapter = new ArrayAdapter<File>(this, android.R.layout.simple_list_item_1, notesList);
+		String[] theNamesOfFiles = new String[notesList.size()];
+		for (int i = 0; i < theNamesOfFiles.length; i++) {
+			   theNamesOfFiles[i] = notesList.get(i).getName();
+			}
+		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, theNamesOfFiles);
 	}
 	private ArrayList<File> getListFiles(File parentDir) 
 	{
 	    ArrayList<File> inFiles = new ArrayList<File>();
 	    File[] files = parentDir.listFiles();
-	    for (File file : files) 
+	    
+	    if(files != null)
 	    {
-	        if (file.isDirectory()) 
-	        {
-	            inFiles.addAll(getListFiles(file));
-	        } 
-	        else 
-	        {
-	            if(file.getName().endsWith(".txt"))
+		    for (File file : files) 
+		    {
+		    	if(file.getName().endsWith(".txt"))
 	            {
 	                inFiles.add(file);
 	            }
-	        }
+//		        if(file.getName().endsWith(".png"))
+//		        {
+//		            inFiles.add(file);
+//		        }
+		    }
 	    }
 	    return inFiles;
 	}
@@ -184,5 +204,14 @@ public class MainPage extends Activity implements OnItemClickListener
 		// TODO Auto-generated method stub
 		// here, the intent is opening up a file and displaying on TextNoteActivity
 		// intent.putExtra
+		// get the file extension
+		// if .txt, open up textnoteactivity
+		// for now, we only deal with txt
+		Intent openTextIntent = new Intent(this, TextNoteActivity.class);
+		String path = Environment.getExternalStorageDirectory() + File.separator + "Notey";
+		String fName = (String)parent.getItemAtPosition(position);
+		File file = new File(path + File.separator + fName); 
+		openTextIntent.putExtra("openSavedText", file);
+		startActivity(openTextIntent);
 	}
 }
