@@ -170,9 +170,6 @@ public class TextNoteActivity extends Activity
 					//save the text file using the title as the file name
 					saveFile(title, textContent, path);
 					
-					/*File file = new File(Environment.getExternalStorageDirectory()
-                    + File.separator + "/test" + String.valueOf(fCount++) +".text" );*/
-					
 				}
 			} 
 			catch (Exception e)

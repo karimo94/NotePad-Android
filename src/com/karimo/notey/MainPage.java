@@ -46,6 +46,50 @@ public class MainPage extends Activity implements OnItemClickListener
 		
 		loadListView();
 		listView.setAdapter(adapter);
+		
+		//if we long click on an item, bring up a dialog to confirm deletion of the file
+		listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() 
+		{
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view,
+					int position, long id)
+			{
+				// delete the file selected
+				final String path = Environment.getExternalStorageDirectory() + File.separator + "Notey";
+				final String fName = (String)parent.getItemAtPosition(position);
+				
+				AlertDialog.Builder builder = new AlertDialog.Builder(MainPage.this);
+                
+		        builder
+		        .setMessage("Delete " + fName + "?")
+		        .setPositiveButton("Yes",  new DialogInterface.OnClickListener() 
+		        {
+		            @Override
+		            public void onClick(DialogInterface dialog, int id) 
+		            {
+		                // Yes-code
+		            	File file = new File(path + File.separator + fName); 
+		            	file.delete();
+		            	adapter.remove(fName + ".txt");
+		            	adapter.notifyDataSetChanged();
+		            	loadListView();
+		            	listView.setAdapter(adapter);
+		            }
+		        })
+		        .setNegativeButton("No", new DialogInterface.OnClickListener() 
+		        {
+		            @Override
+		            public void onClick(DialogInterface dialog,int id) 
+		            {
+		                dialog.cancel();
+		            }
+		        })
+		        .show();
+
+				return true;
+			}
+		});
 	}
 
 	@Override
@@ -214,4 +258,5 @@ public class MainPage extends Activity implements OnItemClickListener
 		openTextIntent.putExtra("openSavedText", file);
 		startActivity(openTextIntent);
 	}
+	
 }
