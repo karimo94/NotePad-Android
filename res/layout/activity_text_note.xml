@@ -54,6 +54,7 @@
         android:background="#FAF2AD"
         android:textColor="#000000"
         android:inputType="textMultiLine"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical" 
+        android:textCursorDrawable="@null"/>
 
 </RelativeLayout>
