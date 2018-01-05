@@ -21,13 +21,10 @@ public class DrawingNoteActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_drawing_note);
-		
+		drawView = (DrawingView) findViewById(R.id.drawingBoard);
 		LinearLayout paintLayout = (LinearLayout)findViewById(R.id.paint_colors);
 		currPaint = (ImageButton)paintLayout.getChildAt(0);
 		currPaint.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
-		
-		drawView = (DrawingView) findViewById(R.id.drawingBoard);
-
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
