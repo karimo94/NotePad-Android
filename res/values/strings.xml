@@ -23,4 +23,7 @@
 	<string name="undo">Undo</string>
 	<string name="redo">Redo</string>
 
+	<string name="sml">Small</string>
+	<string name="med">Medium</string>
+	<string name="lrg">Large</string>
 </resources>

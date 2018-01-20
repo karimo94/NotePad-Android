@@ -229,14 +229,10 @@ public class MainPage extends Activity implements OnItemClickListener
 	    {
 		    for (File file : files) 
 		    {
-		    	if(file.getName().endsWith(".txt"))
+		    	if(file.getName().endsWith(".txt") || file.getName().endsWith(".png"))
 	            {
 	                inFiles.add(file);
 	            }
-//		        if(file.getName().endsWith(".png"))
-//		        {
-//		            inFiles.add(file);
-//		        }
 		    }
 	    }
 	    return inFiles;
