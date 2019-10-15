@@ -5,14 +5,20 @@ package com.karimo.notey;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+//import java.util.jar.Attributes.Name;
+
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.view.Menu;
@@ -32,7 +38,23 @@ public class MainPage extends Activity implements OnItemClickListener
 	//listview adapter
 	private ArrayAdapter<String> adapter;
 	private ListView listView;
+	private static final int PERMISSION_REQUEST_READ_EXTERNAL_STORAGE = 0;
 	static final int NEW_BLANK_NOTE_REQUEST = 1;
+	static final int NEW_BLANK_DRAWING_REQUEST = 2;
+	//static final int NEW_BLANK_TODOLIST_REQUEST = 3;
+	
+	@Override
+	protected void onStart()
+	{
+		super.onStart();
+		// Ask for permissions
+	    int permissionCheckWriteExternalStorage = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+	    if (permissionCheckWriteExternalStorage != PackageManager.PERMISSION_GRANTED) {
+	        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_READ_EXTERNAL_STORAGE);
+	        return;
+	    }
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -71,7 +93,18 @@ public class MainPage extends Activity implements OnItemClickListener
 		                // Yes-code
 		            	File file = new File(path + File.separator + fName); 
 		            	file.delete();
-		            	adapter.remove(fName + ".txt");
+		            	if(file.getName().endsWith(".txt"))
+		            	{
+		            		adapter.remove(fName + ".txt");
+		            	}
+		            	if(file.getName().endsWith(".png"))
+		            	{
+		            		adapter.remove(fName + ".png");
+		            	}
+//		            	if(file.getName().endsWith(".db"))
+//		            	{
+//		            		adapter.remove(fName + ".db");
+//		            	}
 		            	adapter.notifyDataSetChanged();
 		            	loadListView();
 		            	listView.setAdapter(adapter);
@@ -91,7 +124,6 @@ public class MainPage extends Activity implements OnItemClickListener
 			}
 		});
 	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
@@ -119,15 +151,15 @@ public class MainPage extends Activity implements OnItemClickListener
 			return true;
 		case R.id.action_newDrawNote:
 			Intent j = new Intent(this, DrawingNoteActivity.class);
-			startActivity(j);
+			startActivityForResult(j,NEW_BLANK_DRAWING_REQUEST);
 			return true;
-		case R.id.action_createNewList:
-			Intent k = new Intent(this, TodoListActivity.class);
-			startActivity(k);
-			return true;
-		case R.id.action_searchNotes:
-			searchNotes();
-			return true;
+//		case R.id.action_createNewList:
+//			Intent k = new Intent(this, TodoListActivity.class);
+//			startActivityForResult(k, NEW_BLANK_TODOLIST_REQUEST);
+//			return true;
+//		case R.id.action_searchNotes:
+//			searchNotes();
+//			return true;
 		case R.id.action_settings:
 			Intent settings = new Intent(this, SettingsActivity.class);
 			startActivity(settings);
@@ -138,7 +170,8 @@ public class MainPage extends Activity implements OnItemClickListener
 			return super.onOptionsItemSelected(item);
 		}
 	}
-	
+	//after each new note made, whether its text, picture, or to do list
+	//we need to update the listview with new data once we exit the activity
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) 
 	{
@@ -154,14 +187,30 @@ public class MainPage extends Activity implements OnItemClickListener
 	        	listView.setAdapter(adapter);
 	        }
 	    }
+	    if (requestCode == NEW_BLANK_DRAWING_REQUEST)
+	    {
+	    	if(resultCode == RESULT_OK)
+	    	{
+	    		loadListView();
+	    		listView.setAdapter(adapter);
+	    	}
+	    }
+//	    if (requestCode == NEW_BLANK_TODOLIST_REQUEST)
+//	    {
+//	    	if(resultCode == RESULT_OK)
+//	    	{
+//	    		loadListView();
+//	    		listView.setAdapter(adapter);
+//	    	}
+//	    }
 	}
 	
+	@SuppressWarnings("unused")
 	private void searchNotes()
 	{
 		// TODO Auto-generated method stub
 		// filter the list view by searching using the term
 	}
-
 	private void getOverflowMenu()
 	{
 		try
@@ -184,7 +233,7 @@ public class MainPage extends Activity implements OnItemClickListener
         //the code below is for the about window
         aboutWindow = new AlertDialog.Builder(this);
         final String website = " simpledevcode.wordpress.com";
-        final String AboutDialogMessage = " Notey 1.0\n By Karim Oumghar\n\n Website for contact:\n";
+        final String AboutDialogMessage = " Notey 1.3\n By Karim Oumghar\n\n Website for contact:\n";
         final TextView tx = new TextView(this);
         tx.setText(AboutDialogMessage + website);
         tx.setAutoLinkMask(RESULT_OK);
@@ -241,18 +290,35 @@ public class MainPage extends Activity implements OnItemClickListener
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id)
 	{
-		// TODO Auto-generated method stub
 		// here, the intent is opening up a file and displaying on TextNoteActivity
 		// intent.putExtra
 		// get the file extension
 		// if .txt, open up textnoteactivity
 		// for now, we only deal with txt
-		Intent openTextIntent = new Intent(this, TextNoteActivity.class);
 		String path = Environment.getExternalStorageDirectory() + File.separator + "Notey";
 		String fName = (String)parent.getItemAtPosition(position);
 		File file = new File(path + File.separator + fName); 
-		openTextIntent.putExtra("openSavedText", file);
-		startActivity(openTextIntent);
+		if(fName.endsWith(".txt"))
+		{
+			//its a text note
+			Intent openTextIntent = new Intent(this, TextNoteActivity.class);
+			openTextIntent.putExtra("openSavedText", file);
+			startActivity(openTextIntent);
+		}
+		if(fName.endsWith(".png"))
+		{
+			//its a picture
+			Intent openDrawingIntent = new Intent(this, DrawingNoteActivity.class);
+			openDrawingIntent.putExtra("openSavedDrawing", file);
+			startActivity(openDrawingIntent);
+		}
+//		else
+//		{
+//			//its a checklist
+//			Intent openChecklistIntent = new Intent(this, TodoListActivity.class);
+//			openChecklistIntent.putExtra("openSavedChecklist", file);
+//			startActivity(openChecklistIntent);
+//		}
 	}
 	
 }
