@@ -1,0 +1,7 @@
+com.karimo.notey.test.app-androidTest-0 C:\Users\karim\StudioProjects\Notey\app\build\generated\res\resValues\androidTest\debug
+com.karimo.notey.test.app-androidTest-1 C:\Users\karim\StudioProjects\Notey\app\build\generated\res\rs\androidTest\debug
+com.karimo.notey.test.app-mergeDebugAndroidTestResources-2 C:\Users\karim\StudioProjects\Notey\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.karimo.notey.test.app-mergeDebugAndroidTestResources-3 C:\Users\karim\StudioProjects\Notey\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.karimo.notey.test.app-merged_res-4 C:\Users\karim\StudioProjects\Notey\app\build\intermediates\merged_res\debugAndroidTest
+com.karimo.notey.test.app-androidTest-5 C:\Users\karim\StudioProjects\Notey\app\src\androidTest\res
+com.karimo.notey.test.app-androidTestDebug-6 C:\Users\karim\StudioProjects\Notey\app\src\androidTestDebug\res

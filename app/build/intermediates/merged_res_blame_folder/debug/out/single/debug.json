@@ -1,0 +1,202 @@
+[
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_settings.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/settings.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-xxhdpi_drawer_shadow.9.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-xxhdpi/drawer_shadow.9.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/xml_pref_data_sync.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/xml/pref_data_sync.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_ic_drawer.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/ic_drawer.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_new_pic.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/new_pic.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/layout_brush_chooser.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/layout/brush_chooser.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/layout_activity_text_note.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/layout/activity_text_note.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_medium.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/medium.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_list_note.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/list_note.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_ic_action_save.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/ic_action_save.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_small.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/small.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_test_cursor_icon.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/test_cursor_icon.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_redo.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/redo.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/xml_pref_notification.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/xml/pref_notification.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-xxhdpi_ic_drawer.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-xxhdpi/ic_drawer.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_paint.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/paint.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/layout_activity_todo_list.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/layout/activity_todo_list.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/layout_activity_drawing_note.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/layout/activity_drawing_note.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_ic_action_share.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/ic_action_share.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_ic_action_edit_old.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/ic_action_edit_old.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-mdpi_drawer_shadow.9.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-mdpi/drawer_shadow.9.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-xhdpi_drawer_shadow.9.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-xhdpi/drawer_shadow.9.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_paint_icon.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/paint_icon.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/xml_pref_headers.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/xml/pref_headers.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_drawer_shadow.9.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/drawer_shadow.9.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_paint_pressed.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/paint_pressed.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_checklist_icon.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/checklist_icon.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-mdpi_ic_launcher.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/menu_main_page.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/menu/main_page.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/menu_global.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/menu/global.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/xml_pref_general.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/xml/pref_general.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/menu_todo_list.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/menu/todo_list.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-mdpi_ic_drawer.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-mdpi/ic_drawer.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/layout_item_todo.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/layout/item_todo.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_info_icon.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/info_icon.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_eraser.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/eraser.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_magnify.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/magnify.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_ic_action_new.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/ic_action_new.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_brush.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/brush.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_undo.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/undo.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-xhdpi_ic_drawer.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-xhdpi/ic_drawer.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_large.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/large.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_ic_action_edit.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/ic_action_edit.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_save.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/save.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/layout_activity_main_page.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/layout/activity_main_page.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/drawable-hdpi_ic_launcher.png.flat",
+        "source": "com.karimo.notey.app-main-11:/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/menu_drawing_note.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/menu/drawing_note.xml"
+    },
+    {
+        "merged": "com.karimo.notey.app-merged_res-9:/menu_text_note.xml.flat",
+        "source": "com.karimo.notey.app-main-11:/menu/text_note.xml"
+    }
+]
